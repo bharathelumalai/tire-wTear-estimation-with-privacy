@@ -1,0 +1,98 @@
+Tire Wear Estimation with Privacy is an IoT-based system that monitors tire conditions using sensors (BMP180 & MPU6050) and a NodeMCU ESP8266. The system ensures data privacy using AES encryption, SHA-1 hashed login, and federated learning concepts. It features a web dashboard for viewing encrypted sensor data and includes brute-force protection for secure access.
+ 🚀 Project Overview
+
+This project provides a smart and privacy-preserving way to monitor tire wear using embedded systems. The data is collected using sensors like BMP180 and MPU6050, processed on a NodeMCU ESP8266, and displayed both on an LCD screen and a secure web dashboard.
+
+**Key Features:**
+- Real-time tire pressure and motion data collection
+- AES encryption for secure data transmission
+- Federated learning approach for decentralized model training
+- Brute-force protection on login
+- SHA-1 password hashing for authentication
+- Differential privacy by noise addition to sensitive data
+
+---
+
+## 🧰 Tech Stack
+
+- **Hardware**: NodeMCU ESP8266, BMP180, MPU6050, LCD I2C Display
+- **Software**: Arduino IDE, Embedded C++, HTML
+- **Libraries**:
+  - `Wire.h`
+  - `Adafruit_BMP085.h`
+  - `MPU6050.h`
+  - `LiquidCrystal_I2C.h`
+  - `ESP8266WiFi.h`
+  - `ESP8266WebServer.h`
+  - `AESLib.h`
+  - `Hash.h`
+
+---
+
+## 🔐 Security Implementations
+
+- **Password Hashing**: SHA-1 hashing for user credentials.
+- **AES Encryption**: Data is encrypted before being sent to the web interface.
+- **Brute-Force Protection**: Locks out login attempts after 5 failed tries for 30 seconds.
+- **Federated Learning**: Only model weights are shared, not raw data.
+- **Differential Privacy**: Adds controlled noise to data for enhanced security.
+
+---
+
+## 🧪 Sensors and Data Flow
+
+1. **BMP180**: Measures temperature and pressure.
+2. **MPU6050**: Measures acceleration and gyroscopic values.
+3. **ESP8266**: Reads sensor data, encrypts it, and serves a web dashboard.
+4. **LCD Display**: Shows real-time sensor values.
+5. **Web Interface**: Accessible via Wi-Fi for remote monitoring.
+
+---
+
+## 📷 Dashboard Preview
+
+![Dashboard Preview](./dashboard-screenshot.png)
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. 🔧 Hardware Wiring
+- Connect BMP180 and MPU6050 to NodeMCU via I2C.
+- Connect LCD display (I2C-based) to NodeMCU.
+- Power the system via USB or external power source.
+
+### 2. 🧑‍💻 Software Installation
+- Install [Arduino IDE](https://www.arduino.cc/en/software)
+- Install required libraries via Library Manager
+- Upload the code from `main.ino` to your NodeMCU
+
+### 3. 🌐 Network Configuration
+- Edit your `ssid` and `password` in the code before uploading
+- Connect to the same Wi-Fi network
+
+### 4. 🔍 Access Dashboard
+- Open browser and visit `http://<NodeMCU_IP>`
+- Login with credentials (default: `admin` / `admin`)
+- View encrypted sensor data
+
+---
+
+## 📂 Folder Structure
+
+├── main.ino # Arduino Code
+├── README.md # This file
+├── thumbnail.png # Project Thumbnail
+├── dashboard-screenshot.png # Optional screenshot of dashboard
+
+
+---
+
+## 📈 Future Improvements
+
+- Integration with cloud storage
+- Mobile app for tire condition alerts
+- Predictive analytics using machine learning models
+
+---
+
